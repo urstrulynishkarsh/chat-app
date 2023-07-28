@@ -181,3 +181,20 @@ button:disabled {
     font-weight: 300;
     padding: 12px 24px 0 24px;
 }
+
+/* Add this CSS to your existing stylesheet or create a new one */
+/* Style for the sidebar */
+.chat__sidebar {
+  position: relative;
+  width: 200px; /* Set the desired width of the sidebar */
+  background-color: #f0f0f0; /* Set the desired background color */
+}
+
+.hello {
+    display: inline-block;
+    width: 10px; /* Set the desired size of the circle */
+    height: 10px; /* Set the desired size of the circle */
+    border-radius: 50%;
+    background-color: #2ecc71; /* Set the desired green color */
+    margin-left: 5px; /* Add some spacing between the circle and the username */
+  }

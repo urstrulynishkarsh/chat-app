@@ -12,7 +12,9 @@
   "dependencies": {
     "bad-words": "^3.0.0",
     "express": "^4.16.4",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "sweetalert2": "^11.7.20",
+    "window-popup": "^1.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.7"
