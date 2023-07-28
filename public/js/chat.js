@@ -1,5 +1,34 @@
 const socket = io()
 
+
+
+
+
+function disconnectChat() {
+    Swal.fire({
+    title: 'Disconnect Chat',
+    text: 'Are you sure you want to disconnect from the chat?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Yes',
+    cancelButtonText: 'No'
+}).then((result) => {
+    if (result.isConfirmed) {
+        if (socket) {
+            socket.disconnect(); // Disconnect the socket connection
+            console.log('Disconnected from the chat server!');
+         
+            window.location.href = '/';
+        } else {
+            console.log('No active chat connection to disconnect.');
+        }
+    }
+});
+
+
+
+}
+
 // Elements
 const $messageForm = document.querySelector('#message-form')
 const $messageFormInput = $messageForm.querySelector('input')

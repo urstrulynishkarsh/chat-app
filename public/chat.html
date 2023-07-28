@@ -69,64 +69,12 @@
     <script src="/js/chat.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
 
-
-    <script>if (window.confirm("Do you really want to leave?")) {
-        window.open("exit.html", "Thanks for Visiting!");
-      }</script>
-   
     <script>
-
-
-        // Function to disconnect the chat and redirect to the first page
-        function disconnectChat() {
-        Swal.fire({
-        title: 'Disconnect Chat',
-        text: 'Are you sure you want to disconnect from the chat?',
-        icon: 'question',
-        showCancelButton: true,
-        confirmButtonText: 'Yes',
-        cancelButtonText: 'No'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            if (socket) {
-                socket.disconnect(); // Disconnect the socket connection
-                console.log('Disconnected from the chat server!');
-             
-                window.location.href = '/';
-            } else {
-                console.log('No active chat connection to disconnect.');
-            }
-        }
-    });
-
-
-
-    function saveVoucher() {
-  swal({
-    title: "Alert",
-    text: "Voucher is saved Successfully.",
-    timer: 3000,
-    confirmButtonText: "Ok!", 
-  }, function(){
-    window.location.reload();
-  });
-  setTimeout(function() {
-    window.location.reload();
-  }, 3000);
-}
-
-// call the function
-saveVoucher();
-
-
-
-        }
-
-
-
-
-  
-    </script>
+         window.onbeforeunload = function () {
+            return "Do you really want to leave?";
+        };
+      </script>
+ 
 
     
 

@@ -37,17 +37,31 @@ io.on('connection', (socket) => {
         callback()
     })
 
+    // socket.on('sendMessage', (message, callback) => {
+    //     const user = getUser(socket.id)
+    //     const filter = new Filter()
+
+    //     if (filter.isProfane(message)) {
+    //         return callback('Profanity is not allowed!')
+    //     }
+
+    //     io.to(user.room).emit('message', generateMessage(user.username, message))
+    //     callback()
+    // })
+
+
     socket.on('sendMessage', (message, callback) => {
-        const user = getUser(socket.id)
-        const filter = new Filter()
-
+        const user = getUser(socket.id);
+        const filter = new Filter();
+    
         if (filter.isProfane(message)) {
-            return callback('Profanity is not allowed!')
+            alert('Profanity is not allowed!');
+            return;
         }
-
-        io.to(user.room).emit('message', generateMessage(user.username, message))
-        callback()
-    })
+    
+        io.to(user.room).emit('message', generateMessage(user.username, message));
+        callback();
+    });
 
     socket.on('sendLocation', (coords, callback) => {
         const user = getUser(socket.id)
